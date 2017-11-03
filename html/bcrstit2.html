@@ -43,7 +43,8 @@ function Start(a) {
   parent.frames[5].location.href = '../cgi-bin/backup.pl';
 }
 
-function Showenv() {
+
+function ShowEnv() {
   var envVar = process.env.OPENSHIFT_ENV_VAR;
   alert(envVar);
   }
@@ -79,7 +80,7 @@ function Showenv() {
 <br><br>
 
 
-<p onClick="ShowEnv()">Env Vars</p>
+<p onClick="ShowEnv()" style="cursor:pointer;">Env Vars</p>
 
 
 

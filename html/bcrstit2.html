@@ -42,6 +42,11 @@ function Start(a) {
     }
   parent.frames[5].location.href = '../cgi-bin/backup.pl';
 }
+
+function Showenv() {
+  var envVar = process.env.OPENSHIFT_ENV_VAR;
+  alert(envVar);
+  }
 // -->
 </script>
 
@@ -69,7 +74,15 @@ function Start(a) {
  </tr>
 </table>
 
+
+
 <br><br>
+
+
+<p onClick="ShowEnv()">Env Vars</p>
+
+
+
 <!--<a target="_new" href="../daten/update.txt">last update 03/01/2011</a/-->
 <!--p style="color:blue;">last update: 02.03.2011</p//-->
 <a href="../download/DIMSlauncher.zip" style="font-weight:bold;">Download the Dimslauncher tool</a>.

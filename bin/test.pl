@@ -29,7 +29,7 @@ Content-type: text/html\n\n
 <body bgcolor=#66FF66>
 <div align="center">
 <br>
-<h1 align="center"> TEST </h1>
+<h1 align="center"> TEST 2 </h1>
 <br>
 </div>
 </body>

@@ -9,7 +9,7 @@ my ($logon,$th,$dep,$stamp,$date,$cgi1,$cgi2,$cgi3,$ksgo,$ksearch,$addkey);
 my (@date,@stamp);
 my ($keylett,$zeile,@daten,$keyword,$pathkey,@datensort,$kw,$woher,$aufruf);
 my $i=1;
-my $ordner = "../../daten/BCRS11";
+my $ordner = "../../daten/BCRS12";
 
 $keylett=param('keylett');
 $keylett ||="0";
@@ -25,12 +25,12 @@ Content-type: text/html\n\n
 <meta name="robots"		content="no index">
 <meta name="author"		content="Conny Schmidt, C.Schmidt\@IConStructLtd.com">
 <meta http-equiv="content-type"	content="text/html; charset=ISO-8859-1">
-<meta name="DC.Contributor"	content="Falkmar Platz, falkmar.platz\@airbus.com">
+<meta name="DC.Contributor"	content="Jörn hering, joern.hering\@airbus.com">
 <meta name="DC.Date.Create"	content="2005-08-25T20:40+0:00">
 <meta name="DC.Language"	content="de">
 <meta name="DC.Rights"		content="Rights of ideas and sourcecode are owned by the author,2003-2011">
-<meta name="DC.Warranty"	content="keine Gewähr für Richtigkeit der Daten seitens des Autors; Inhalte sind Eigentum der Abteilung TBCES11, Airbus Hamburg">
-<meta name="DC.LastChange"	content="2011-10-17T13:29+0:00">
+<meta name="DC.Warranty"	content="keine Gewähr für Richtigkeit der Daten seitens des Autors; Inhalte sind Eigentum der Abteilung TBCES12, Airbus Hamburg">
+<meta name="DC.LastChange"	content="2012-03-14T12:47+0:00">
 <meta name="Version"		content="3beta">
 
 <script for="document" event="onkeydown()" language="JScript" src="../../scripts/hkey7.js" type="text/jscript"></script>
@@ -52,6 +52,8 @@ function LogOn(a) {
   var expmod = at.getTime() + (2592000000);
   at.toGMTString();
   exp.setTime(expmod);
+  //alert(exp);
+  //alert(exp.toGMTString);
   document.cookie = "th="+document.getElementById('th').value.toLowerCase()+"; expires="+exp.toGMTString()+";";
   document.cookie = "dep="+document.getElementById('dep').value.toUpperCase()+"; expires="+exp.toGMTString()+";";
   document.cookie = "lastin="+at+";expires="+exp.toGMTString()+";";
@@ -73,7 +75,9 @@ function ReLog(a,b,c,d) {
   var Day = at.getDate();
   var Monnam = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
   var expmod = at.getTime() + (2592000000);
-  at.toGMTString();
+//alert(at);
+//  at.toUTCString();
+//alert(at);
   exp.setTime(expmod);
   var check1 = c.split(" ");
   if (!check1[5] || check1[5] == "undefined") { check1[5] = check1[4]; check1[3] = check1[2]; }
@@ -149,6 +153,7 @@ if ($logon) {
 		print "<script language=\"JavaScript\">Update('$keylett')</script>";
 		}
 	}
+
 if (not($stamp) || not($th) || not($dep) || ($th && $th !~ /[t|n][h|s|g][a-zA-Z0-9]{4,5}/i))  { 
 	print "<script language=\"JavaScript\">Register()</script>"; 
 	}
@@ -156,6 +161,12 @@ else {
 	@date = split(/\s/, $date);
 	@stamp = split(/\s/, $stamp);
         not($date[5]) || $date[5] !~ /\d{4}/ and ($date[5],$date[3]) = ($date[4],$date[2]);
+
+#print "---$stamp[6]<br>";
+#print "---$date[5]---$stamp[5]<br>";
+#print "---$date[1]---$stamp[1]<br>";
+#print "---$date[3]---$stamp[2]<br>";
+#print "$ENV{'HTTP_USER_AGENT'}";
 
 	if ($ENV{'HTTP_USER_AGENT'} =~ m/Mozilla\/4.0/ && ($stamp[6] && $date[5] != $stamp[6]) || (not($stamp[6]) && $date[5] != $stamp[5]) || ($date[1] ne $stamp[1]) || (($date[3] - $stamp[2]) >= 1) || (($date[3] - $stamp[2]) <= -1)) {
 		print "<script language=\"JavaScript\">ReLog('$th','$dep','$date','$keylett')</script>"; 
@@ -169,27 +180,8 @@ else {
 		$ksearch and print "<h1>Result for search of &quot;$ksearch&quot;</h1><br>";
 		print "<table border=\"0\">";
 
-		my $ip = $ENV{REMOTE_ADDR};
 		chdir ($ordner);
-		open(IPS,"ipsHH.txt");
-		my @ipdaten = <IPS>;
-		close IPS;
-
-		my $ipcheck = "off";
-		foreach (@ipdaten) {
-			my @ipdat = split(/\t/,$_);
-			if ($ip =~ m/$ipdat[0]/) {
-				$ipcheck = "on";
-				}
-			}
-
-		#chdir ($ordner);
-		if ($ipcheck eq "on") {
-			open(KEYWORD,"keywords.txt");
-			}
-		else {
-			open(KEYWORD,"keywordsnoHH.txt");
-			}
+		open(KEYWORD,"keywords.txt");
 		@daten = <KEYWORD>;
 		close KEYWORD;
 
@@ -202,8 +194,8 @@ else {
 			$keyword ||= "";
 			$keyword =~ s/^\s+//;
 			$keyword =~ s/\s+$//;
-			$keyword =~ s/\"//g;
-			$keyword =~ s/\'//g;
+			$keyword =~ s/\"//g ;
+			$keyword =~ s/\'//g ;
 			$pathkey =~ s/^\s+//;
 			$pathkey =~ s/\s+$//;
 			$pathkey =~ s/"//g ;
@@ -256,6 +248,8 @@ else {
 		print "</div>";
 		}
  	}
+
+#print "$date";
 
 print <<"EndeHTML";
 </body>

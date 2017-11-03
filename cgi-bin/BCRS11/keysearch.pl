@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl -w
+#!/usr/cgi-bin/env perl
 use CGI::Carp qw(fatalsToBrowser);
 use strict;
 use CGI ('param');

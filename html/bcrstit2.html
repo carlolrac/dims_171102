@@ -40,15 +40,11 @@ function Start(a) {
     parent.frames[1].location.href = 'BCRS12/titelbl.html';
     parent.frames[2].location.href = '../cgi-bin/BCRS12/glpmsnch.pl';
     }
-  parent.frames[5].location.href = '../cgi-bin/backup.pl';
 }
 
 
 function ShowEnv() {
-  alert("hallo 1");
-  var envVar = process.env.OPENSHIFT_ENV_VAR;
-  alert(envVar);
-  alert("hallo 2");
+  parent.frames[0].location.href = '../test.pl';
   }
 // -->
 </script>

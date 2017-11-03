@@ -1,15 +1,41 @@
 #!/usr/bin/env perl
+
+
 #use Dancer2;
-use Plack::Runner;
+#use Plack::Runner;
 
 ## For some reason Apache SetEnv directives dont propagate
 ## correctly to the dispatchers, so forcing PSGI and env here 
 ## is safer.
-set apphandler => 'PSGI';
-set environment => 'production';
+#set apphandler => 'PSGI';
+#set environment => 'production';
 
-my $psgi;
-$psgi = path($ENV{'DOCUMENT_ROOT'}, 'cgi-bin', 'BCRS11/keywinit.pl');
-die "Unable to read startup script: $psgi" unless -r $psgi;
+#my $psgi;
+#$psgi = path($ENV{'DOCUMENT_ROOT'}, 'cgi-bin', 'BCRS11/keywinit.pl');
+#die "Unable to read startup script: $psgi" unless -r $psgi;
 
-Plack::Runner->run($psgi);
+#Plack::Runner->run($psgi);
+
+
+
+use strict;
+use CGI::Carp qw(fatalsToBrowser);
+use CGI ('param');
+
+print <<"HTML";
+Content-type: text/html\n\n
+<html><head><title>Abkürzungen</title>
+
+<meta name="DC.LastChange"  	  content="2008-04-18T13:43+0:00">
+<meta name="Version"   	 	  content="1">
+
+</head>
+<body bgcolor=#66FF66>
+<div align="center">
+<br><h1 align="center"> Abk&uuml;rzungen </h1><br>
+</div>
+</body>
+
+</html>
+HTML
+

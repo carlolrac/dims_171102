@@ -1,0 +1,5 @@
+Abkürzungen [Abbreviations]	../../html/abbfram.html
+Abbreviations [Abkürzungen]	../../html/abbfram.html
+Telefonvorwahlen (international)	../../cgi-bin/telvwint.pl
+Wording for specifications	../../html/englverb.html
+Verwendung englischer Verben	../../html/englverb.html

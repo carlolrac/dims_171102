@@ -7,6 +7,7 @@
 
 requires "CGI" => "0";
 requires "CGI::Carp" => "0";
+requires "Env" => "0";
 
 recommends "URL::Encode::XS"  => "0";
 recommends "CGI::Deurl::XS"   => "0";

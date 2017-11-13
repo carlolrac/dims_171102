@@ -18,6 +18,7 @@ $ksgo = param('ksgo');
 $ksearch = param('ksearch');
 $ksearch ||= "";
 
+
 print <<"HTML";
 Content-type: text/html\n\n
 <html><head>

@@ -50,7 +50,7 @@ HTML
 my $date = localtime(time);
 my @keylett = ('A'..'Z','Main');
 foreach (@keylett) {
-	$_ ne "Main" and print "<a href=\"../../cgi-bin/BCRS12/keysearch.pl?keylett=$_&a=$date\" target=\"main\">$_</a> &nbsp;&nbsp;&nbsp;";
+	$_ ne "Main" and print "<a href=\"../../bin/BCRS12/keysearch.pl?keylett=$_&a=$date\" target=\"main\">$_</a> &nbsp;&nbsp;&nbsp;";
 	$_ eq "Main" and print "&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"../../index.html\" target=\"_parent\">$_</a>";
 	}
 

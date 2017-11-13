@@ -3,13 +3,14 @@ use CGI::Carp qw(fatalsToBrowser);
 use strict;
 use CGI ('param');
 use CGI;
+
 use Env;
 
 my ($logon,$th,$dep,$stamp,$date,$cgi1,$cgi2,$cgi3,$ksgo,$ksearch,$addkey);
 my (@date,@stamp);
 my ($keylett,$zeile,@daten,$keyword,$pathkey,@datensort,$kw,$woher,$aufruf);
 my $i=1;
-my $ordner = "../../daten/BCRS12";
+my $ordner = "/opt/app-root/src/daten/BCRS12";
 
 $keylett=param('keylett');
 $keylett ||="0";

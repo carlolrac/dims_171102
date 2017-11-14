@@ -5,7 +5,7 @@ use CGI ('param');
 
 my ($land,$telvw,@daten,$i,$landlett);
 my $z=0;
-my ($ordner)="../daten";
+my ($ordner)="/opt/app-root/src/daten";
 
 print <<"HTML";
 Content-type: text/html\n\n

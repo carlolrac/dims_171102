@@ -2,4 +2,4 @@ sourceStrategy:
 ...
   env:
     - name: "ENABLE_CPAN_TEST"
-      value: "true"
+      value: "false"

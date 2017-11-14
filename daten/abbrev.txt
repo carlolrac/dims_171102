@@ -1,0 +1,13 @@
+A	Attendant Seat	Flugbegleitersitz
+CAD	Computer Aided Design	Computergestütztes Konstruieren
+CAS	Cabin Attendant Seat	Flugbegleitersitz
+CCD	Catia – Cadam Drafting	&nbsp;
+D	Doghouse	„kleiner Stauschrank hinter Sitzreihe“
+IAT	In Arm Table	Ausklappbarer Armlehnentisch
+IFE	In Flight Entertainment	
+ITCM	Initial Technical Coordination Meeting	
+JAA	Joint Aviation Authorities	Luftfahrtbehörde
+JAR	Joint Airworthiness Requirements	JAA - Zulassungsvorschriften
+LBA		Luftfahrtbundesamt
+LH	Left Hand (side)	Linksseitig
+TD	Technical Dossier	

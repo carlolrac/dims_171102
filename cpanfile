@@ -5,12 +5,12 @@
 #requires "Template" => "0";
 #requires "GD" => "0";
 
-requires "CGI" => "0";
-requires "CGI::Carp" => "0";
+#requires "CGI" => "0";
+#requires "CGI::Carp" => "0";
 requires "Env" => "0";
 
 recommends "URL::Encode::XS"  => "0";
-recommends "CGI::Deurl::XS"   => "0";
+#recommends "CGI::Deurl::XS"   => "0";
 recommends "HTTP::Parser::XS" => "0";
 
 recommends "Plack::Handler::Apache2" => "0";

@@ -34,7 +34,7 @@ Content-type: text/html\n\n
 HTML
 
 foreach $i("A".."M") {
-	 print"<b><a href=\"../cgi-bin/telvwint.pl?landlett=$i\">$i</a></b><br><br>";
+	 print"<b><a href=\"../bin/telvwint.pl?landlett=$i\">$i</a></b><br><br>";
 	}
 print "</td><td bgcolor=\"#AAAAAA\">";
 
@@ -76,7 +76,7 @@ elsif (not($landlett))  {
 
 print"</table></td><td width=\"15\" bgcolor=\"#C0C0C0\"><br>";
 foreach $i("N".."Z") {
-	($i ne "X") and print"<b><a href=\"../cgi-bin/telvwint.pl?landlett=$i\">$i</a></b><br><br>";
+	($i ne "X") and print"<b><a href=\"../bin/telvwint.pl?landlett=$i\">$i</a></b><br><br>";
 	}
 
 print <<"END";

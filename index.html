@@ -29,7 +29,7 @@ function TCon() {
     NW = NW.replace("?NW=", "");
     U = NW;
     }
-  alert('vom Netzwerk:'+U+'-');
+  //alert('vom Netzwerk:'+U+'-');
 
   if (!U || U == "") {
     U = document.cookie;
@@ -46,8 +46,8 @@ function TCon() {
     //alert('aus cookie:'+U+'-');
     }
 
-   alert(U.length);
-   alert(U);
+   //alert(U.length);
+   //alert(U);
    if (U && U.length >= 5 && U.length <= 8 && U != "") {
     //AI = 6,7and 8; Admin = 4
     var EX = new Date();

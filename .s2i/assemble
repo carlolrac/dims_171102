@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+source ${STI_SCRIPTS_PATH}/assemble
+
+chmod –R 755 /opt/app-root/scr/bin
+chmod –R 777 /opt/app-root/scr/daten

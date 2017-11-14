@@ -201,6 +201,7 @@ else {
 			$pathkey =~ s/^\s+//;
 			$pathkey =~ s/\s+$//;
 			$pathkey =~ s/"//g ;
+
 			my $z=-4;
 			my $l = (length($pathkey)-4)*(-1);
 
@@ -211,6 +212,7 @@ else {
 			$aufruf =~ s/\'//g ;
 			$kw = $keyword;
 			$kw =~ s/'//g;
+			$keyword =~ s/ü/&uuml;/g ;
 
 			if ($keylett) {	
 				$keyword =~ m/(\w)/;

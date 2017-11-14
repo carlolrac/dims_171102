@@ -1,10 +1,10 @@
 #!/usr/bin/env perl
-#use CGI::Carp qw(fatalsToBrowser);
+use CGI::Carp qw(fatalsToBrowser);
 use strict;
-#use CGI ('param');
-#use CGI;
+use CGI ('param');
+use CGI;
 
-#use Env;
+use Env;
 
 my ($logon,$th,$dep,$stamp,$date,$cgi1,$cgi2,$cgi3,$ksgo,$ksearch,$addkey);
 my (@date,@stamp);

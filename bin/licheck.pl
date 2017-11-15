@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 use FindBin;
-use lib $FindBin::Bin;
-use zug8;
+#use lib $FindBin::Bin;
+#use zug8;
 
 use CGI::Carp qw(fatalsToBrowser);
 use CGI ('param');

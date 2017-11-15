@@ -1,7 +1,7 @@
 #!/usr/local/bin/perl -w
 use strict;
 use warnings;
-use FindBin;
+#use FindBin;
 #use lib $FindBin::Bin;
 #use zug8;
 

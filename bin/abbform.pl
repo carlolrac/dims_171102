@@ -30,14 +30,14 @@ Content-type: text/html\n\n
 
 <!--Eingabeformular für Abkürzung-->
 <div style="position:absolute; top:10px; left:10px;">
-<p class="abk"> Abkürzung: <input size="8" name="abbrev"><br></p>
+<p class="abk"> Abk&uuml;rzung: <input size="8" name="abbrev"><br></p>
 </div>
 
-<div style="position:absolute; top:60px; left:10px;">
+<div style="position:absolute; top:70px; left:10px;">
 <input type="submit" class="but6" value="Suchen"><br>
 </div>
 
-<div style="position:absolute; top:95px; left:10px;">
+<div style="position:absolute; top:105px; left:10px;">
 <input type="submit" class="but5" name="alle" value="Alle anzeigen"><br>
 </div>
 

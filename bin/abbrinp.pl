@@ -22,7 +22,7 @@ use zug7;
 
 my ($abbrev, $mean, $transrem, $zeile,$ok);
 
-my ($ordner)="../daten";
+my ($ordner)="/opt/app-root/src/daten";
 $abbrev=param('abbrev');
 $mean=param('mean');
 $transrem=param('transrem');
@@ -32,6 +32,12 @@ Content-type: text/html\n\n
 <html><head><title>Eingabe einer neuen Abkürzung</title></head>
 <body bgcolor="#c0c0c0">
 HTML
+
+$abbrev and print "<script> alert('$abbrev');</script>";
+$mean and print "<script> alert('$mean');</script>";
+$transrem and print "<script> alert('$transrem');</script>";
+
+print "<script> alert('hallo');";
 
 my $g = param('a');
 my $h = param('b');

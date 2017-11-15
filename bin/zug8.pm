@@ -1,12 +1,12 @@
 #!/usr/local/bin/perl -w
-package zug7;
+package zug8;
 use strict;
 use warnings;
 use vars qw(@ISA @EXPORT $VERSION);
 use Exporter;
 $VERSION = 1.00;
 @ISA     = qw(Exporter);
-@EXPORT  = qw(Zug7);
+@EXPORT  = qw(Zug8);
 
 #!<meta name="description"    	  content="TBRSE2 Database">
 #!<meta name="robots"         	  content="no index">
@@ -21,11 +21,9 @@ $VERSION = 1.00;
 #!<meta name="DC.LastChange"  	  content="2008-04-07T11:21+0:00">
 #!<meta name="Version"   	  content="1">
 
-sub Zug7  {
+sub Zug8  {
 	my $g=shift;
 	my $h=shift;
-	#not($g) and $g="";
-	#not($h) and $h="";
 	$g ||="";
 	$h ||="";
 	my (@daten,@log,$w,$check,$i,$tmp,$tmp2);
@@ -54,11 +52,12 @@ sub Zug7  {
 #print "<script>alert('$g -- $h -- $_');</script>";
 #print "$g -- $h -- $_<br>";
 			if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ )  {
+				$tmp2=$_;
+				$tmp2 =~ s/\s/\|/;
 				for ($i=1; $i<=$#daten; $i++)  {
 					#chomp($daten[$i]);
 					$daten[$i] =~ s/\s+$//;
-					$tmp2=$_;
-					$tmp2 =~ s/\s/\|/;
+
 					$daten[$i] && $tmp2 =~ /$daten[$i]/ and $w="access";
 					}
 				}
@@ -67,14 +66,14 @@ sub Zug7  {
 		}
 
 	if (not($w)) {
-		print <<HTML
-		<div align="center">
-		<br><br><br><br><br>
-		<h3>Dieser Bereich steht nur den Mitarbeitern der Abteilungen ECRS11 und ECRS12 zur Verf&uuml;gung !</h3><br><br>
-		<!--p><b><br>Passwort nicht korrekt !</b><br><br//-->
-		<b><span style=\"color:red\">+ + + &nbsp;Zugang verweigert !&nbsp; + + +</span></b></p>
-		</div>
-HTML
+#		print <<HTML
+#		<div align="center">
+#		<br><br><br><br><br>
+#		<h3>Dieser Bereich steht nur den Mitarbeitern der Abteilungen ECRS11 und ECRS12 zur Verf&uuml;gung !</h3><br><br>
+#		<!--p><b><br>Passwort nicht korrekt !</b><br><br//-->
+#		<b><span style=\"color:red\">+ + + &nbsp;Zugang verweigert !&nbsp; + + +</span></b></p>
+#		</div>
+#HTML
 	}
 	
 return $w;

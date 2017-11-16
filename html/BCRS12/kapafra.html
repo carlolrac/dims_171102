@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+
+<html>
+
+
+<head>
+<title>EWMSframe</title>
+<meta name="description"    		content="DIMS">
+<meta name="robots"         		content="no index">
+<meta name="author"         		content="Conny Schmidt, C.Schmidt@IConStructLtd.com">
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="DC.Contributor" 		content="Andreas Mohr, andreas.mohr@airbus.com">
+<meta name="DC.Date.Create" 		content="2015-12-28T19:55+0:00">
+<meta name="DC.Language"    		content="en,de">
+<meta name="DC.Rights"	  			content="Rights of ideas and sourcecode are owned by the author,2003-indefinitely">
+<meta name="DC.Warranty"        content="keine Gewähr für Richtigkeit der Daten seitens des Autors; 
+				         												 Inhalte sind Eigentum der Abteilung ECG5D, Airbus Hamburg ">
+<meta name="DC.LastChange"  		content="2015-12-28T19:55+0:00">
+<meta name="Version"   	    		content="1">
+
+<script src="../../scripts/airlco12.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+var AccU = "1";
+var AccT = 1;
+function CheckVal() {
+if (!window.location.search) {
+  LogInp("kapafra.html");
+  }
+else {
+  var Id = new Array();
+  Id = window.location.search.split("&b=");
+  Id[0] = Id[0].replace("?a=", "");
+  AccU = Id[0];
+  AccT = Id[1];
+  frames[0].document.location.href = "../../bin/BCRS12/kapafor.pl?a="+AccU+"&b="+AccT+"&u="+parent.parent.U;
+  }
+}
+//-->
+</script>
+
+
+<frameset cols="150,*" frameborder="0" marginwidth="0" marginheight="0" framespacing="0" onLoad="CheckVal()">
+      <frameset id="busy" rows="158,*" frameborder="0" marginwidth="0" marginheight="0" framespacing="0">
+          <frame src="../../html/BCRS12/empty3.html" name="search" scrolling="no"></frame>
+          <frame src="../../html/BCRS12/empty3.html" name="interim" scrolling="automatic"></frame>
+      </frameset>
+      <!--frameset rows="100%,0" frameborder="0" marginwidth="0" marginheight="0" framespacing="0"//-->
+      <frameset rows="*,20" frameborder="0" marginwidth="0" marginheight="0" framespacing="0">
+          <frame src="../../html/BCRS12/titelbl.html" name="result" scrolling="automatic"></frame>
+          <frame src="../../html/BCRS12/empty3.html" name="store" scrolling="automatic"></frame>
+        <noframes>
+          <p> This browser cannot display frames. Pleas, contact the system administrator. </p>
+        </noframes>
+      </frameset>
+</frameset>
+
+</head>
+</html>
+

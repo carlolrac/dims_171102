@@ -1,0 +1,19 @@
+ITCM	ITCM	booked	lightgreen	MO	
+CDR	CDR	booked	lightgreen	MO	
+PDR	PDR	booked	lightgreen	MO	
+TRM	TRM	booked	lightgreen	MO	
+FPDR	FPDR	booked	lightgreen	MO	
+FAI	First Article Inspection	booked	lightgreen	MO	
+ITCMprot	ITCM Protocol		springgreen	MO	
+ITCMp	ITCM (planned)	planned	magenta	MO	
+CDRp	CDR (planned)	planned	magenta	MO	
+PDRp	PDR (planned)	planned	magenta	MO	
+TRMp	TRM (planned)	planned	magenta	MO	
+FPDRp	FPDR (planned)	planned	magenta	MO	
+FAIp	First Article Inspection (planned)	planned	magenta	MO	
+A	Absence		dimgrey	OO	
+Ap	Absence(planned)	planned	grey	OO	
+HO	Home Office		cadetblue	OO	
+Doil	Days off in lieu		orange	OO	
+Hol	Holidays		yellow	OO	
+Edu	Educational Course		lightblue	OO	

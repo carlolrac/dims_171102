@@ -19,8 +19,9 @@
 
 
 use strict;
-#use CGI::Carp qw(fatalsToBrowser);
-#use CGI ('param');
+use CGI::Carp qw(fatalsToBrowser);
+use CGI ('param');
+use FindBin;
 
 print <<"HTML";
 Content-type: text/html\n\n

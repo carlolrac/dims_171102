@@ -1,11 +1,11 @@
-#!/usr/local/bin/perl -w
+#!/usr/bin/env perl
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI ('param');
 
 use FindBin;
-use lib $FindBin::Bin;
-use zug7;
+#use lib $FindBin::Bin;
+#use zug7;
 
 #!<meta name="description"    	  content="TBRSE2 Database">
 #!<meta name="robots"         	  content="no index">
@@ -41,7 +41,8 @@ print "<script> alert('hallo');";
 
 my $g = param('a');
 my $h = param('b');
-my ($w) = Zug7($g,$h);
+#my ($w) = Zug7($g,$h);
+my $w = "test";
 if($w) {
 
 print "<br><br><h1 align=\"center\"> Abk&uuml;rzungen - neue Eingabe </h1><br><br>";

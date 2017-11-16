@@ -1,5 +1,5 @@
 // Kontrolle der Zugriffsrechte ECRS12
-// author:Conny Schmidt, C.Schmidt@IConStructLtd.com
+// author:Carl Schmidt, C.Schmidt@Schmidt.com
 
 <!--
 var Log;

@@ -37,7 +37,7 @@ $abbrev and print "<script> alert('$abbrev');</script>";
 $mean and print "<script> alert('$mean');</script>";
 $transrem and print "<script> alert('$transrem');</script>";
 
-print "<script> alert('hallo');";
+print "<script> alert('hallo');</script>";
 
 my $g = param('a');
 my $h = param('b');

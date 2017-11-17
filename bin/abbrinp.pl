@@ -3,9 +3,9 @@ use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI ('param');
 
-use FindBin;
+#use FindBin;
 #use lib $FindBin::Bin;
-#use zug7;
+use zug7;
 
 #!<meta name="description"    	  content="TBRSE2 Database">
 #!<meta name="robots"         	  content="no index">

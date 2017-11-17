@@ -3,7 +3,7 @@ use strict;
 use warnings;
 #use FindBin;
 #use lib $FindBin::Bin;
-#use zug8;
+use zug8;
 
 use CGI::Carp qw(fatalsToBrowser);
 use CGI ('param');
@@ -64,8 +64,8 @@ HTML
 my $g = $a;
 my $h = $b;
 my $w;
-#$w = Zug8($g,$h);
-$w = "test";
+$w = Zug8($g,$h);
+#$w = "test";
 
 if ($w) {
 	print "W = 'access';\n\n";

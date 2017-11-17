@@ -41,8 +41,8 @@ print "<script> alert('hallo');";
 
 my $g = param('a');
 my $h = param('b');
-#my ($w) = Zug7($g,$h);
-my $w = "test";
+my ($w) = Zug7($g,$h);
+#my $w = "test";
 if($w) {
 
 print "<br><br><h1 align=\"center\"> Abk&uuml;rzungen - neue Eingabe </h1><br><br>";

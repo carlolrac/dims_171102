@@ -160,9 +160,9 @@ print <<"HTML";
     if (Loc.pass) { document.getElementById("pass").value = Loc.pass; }
 
     var tmp = w.match(".html");
-    if (tmp) y = y.replace("cgi-bin","html");
+    if (tmp) y = y.replace("bin","html");
 
- //   alert(y);
+    alert(y);
 
     if (!tmp) {
       document.getElementById("Logon").target = "main";

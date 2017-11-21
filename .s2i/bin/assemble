@@ -1,0 +1,5 @@
+source $STI_SCRIPTS_PATH/assemble 
+
+#post-install operations 
+/usr/bin/ln -s /opt/app-root/src/cgi-bin /opt/app-root/src/bin
+

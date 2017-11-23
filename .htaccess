@@ -1,2 +1,2 @@
-## RUN PHP AS APACHE MODULE
-AddHandler application/x-httpd-php .php .htm
+## PARSE AS CGI
+AddHandler cgi-script .cgi .pl .spl

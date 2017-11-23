@@ -5,4 +5,5 @@ source ${STI_SCRIPTS_PATH}/assemble
 chmod –R 755 /opt/app-root/src/bin
 chmod –R 755 /opt/app-root/src/cgi-bin
 chmod –R 777 /opt/app-root/src/daten
+chmod –R 777 /mnt
 

@@ -4,8 +4,8 @@ source ${STI_SCRIPTS_PATH}/assemble
 
 chmod –R 755 /opt/app-root/src/bin
 chmod –R 755 /opt/app-root/src/cgi-bin
-chmod –R 777 /opt/app-root/src/daten/abbrev.txt
+chmod –R 777 /opt/app-root/src/daten
 
 #post-install operations 
-/usr/bin/ln -s /cgi-bin /opt/app-root/src/bin
+/usr/bin/ln -s cgi-bin /opt/app-root/src/bin
 

@@ -22,7 +22,8 @@ use zug7;
 
 my ($abbrev, $mean, $transrem, $zeile,$ok);
 
-my ($ordner)="/opt/app-root/src/daten";
+#my ($ordner)="/opt/app-root/src/daten";
+my ($ordner)="/mnt/daten";
 $abbrev=param('abbrev');
 $mean=param('mean');
 $transrem=param('transrem');

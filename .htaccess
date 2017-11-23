@@ -1,7 +1,3 @@
-Require all granted
-
-AllowOverride All
-
 Options +ExecCGI
 
 ## PARSE AS CGI

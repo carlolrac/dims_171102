@@ -1,2 +1,7 @@
+AllowOverride All
+
+Options +ExecCGI
+
 ## PARSE AS CGI
 AddHandler cgi-script .cgi .pl .spl
+

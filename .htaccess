@@ -1,2 +1,2 @@
-AllowOverride All
 AddDefaultCharset on
+AddCharset ISO-8859-1

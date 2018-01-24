@@ -14,7 +14,7 @@ $VERSION = 1.00;
 #!<meta name="DC.Contributor" 	  content="Markus Fritz, Markus.Fritz@airbus.com">
 #!<meta name="DC.Date.Create" 	  content="2005-07-09T2:59+0:00">
 #!<meta name="DC.Language"    	  content="de">
-#!<meta name="DC.Rights"	  content="Rights of ideas and sourcecode are owned by the author,2003-2008">
+#!<meta name="DC.Rights"	  	content="Rights of ideas and sourcecode are owned by the author,2003-2008">
 #!<meta name="DC.Warranty"        content="keine Gewähr für Richtigkeit der Daten seitens des Autors; 
 #!				           Inhalte sind Eigentum der Abteilung TBRSE22, Airbus Hamburg  ">
 #!<meta name="DC.LastChange"  	  content="2008-04-07T12:52+0:00">
@@ -57,6 +57,7 @@ sub Zug12  {
 				#chomp($tmp3);
 				for ($i=1; $i<=$#daten; $i++)  {
 					#$daten[$i] && $tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+					$daten[$i] =~ s/\s+$//;
 					$daten[$i] && $tmp2 =~ /$daten[$i]/ and $w="access";
 					}
 				}

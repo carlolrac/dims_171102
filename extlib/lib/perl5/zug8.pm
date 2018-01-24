@@ -27,7 +27,7 @@ sub Zug8  {
 	$g ||="";
 	$h ||="";
 	my (@daten,@log,$w,$check,$i,$tmp,$tmp2);
-	my ($ordner)="/opt/app-root/src/daten";
+	my ($ordner)="/mnt/daten";
 	
 	chdir ($ordner);
 	open(ACC,"access7.txt");

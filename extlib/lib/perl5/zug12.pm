@@ -47,18 +47,28 @@ sub Zug12  {
 
 	#$check = "172.17.";
 
+	if ($daten[0] =~ m/$check/)  {
+		print "<script>alert('hurra')</script>";
+		}
+
 
 	#if ($daten[0] =~ m/$check/)  {
 		foreach (@log) {
 			if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ )  {
 				$tmp2=$_;
 				$tmp2 =~ s/\s/\|/;
-				#my $tmp3 = $tmp2;
-				#chomp($tmp3);
+				my $tmp3 = $tmp2;
+				chomp($tmp3);
 				for ($i=1; $i<=$#daten; $i++)  {
 					#$daten[$i] && $tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
-					$daten[$i] =~ s/\s+$//;
-					$daten[$i] && $tmp2 =~ /$daten[$i]/ and $w="access";
+					if ($daten[$i]) {
+						$daten[$i] =~ s/\s+$//;
+						print "<script>alert('$daten[$i]')</script>";
+						if ($daten[$i] && $tmp2 =~ /$daten[$i]/) {
+							$w="access";
+							}
+						$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+						}
 					}
 				}
 			#last if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ );
@@ -66,15 +76,6 @@ sub Zug12  {
 	#	}
 	
 
-	if (not($w)) {
-		print <<HTML;
-		<div align="center">
-		<br><br><br><br><br>
-		<h3>Dieser Bereich steht nur den Mitarbeitern der Abteilung ECG5C zur Verf&uuml;gung !</h3><br><br>
-		<!--p><b><br>Passwort nicht korrekt !</b><br><br//-->
-		<b><span style=\"color:red\">+ + + &nbsp;Zugang verweigert !&nbsp; + + +</span></b></p>
-		</div>
-HTML
 
 		print "<script>alert('check: $check');</script>";
 		my $tmp77 = $daten[0];
@@ -91,7 +92,17 @@ HTML
 		#print "<script>alert('$daten[1]');</script>";
 		print "<script>alert('check: $check');</script>";
 
+	$w="access";
 
+	if (not($w)) {
+		print <<HTML;
+		<div align="center">
+		<br><br><br><br><br>
+		<h3>Dieser Bereich steht nur den Mitarbeitern der Abteilung ECG5C zur Verf&uuml;gung !</h3><br><br>
+		<!--p><b><br>Passwort nicht korrekt !</b><br><br//-->
+		<b><span style=\"color:red\">+ + + &nbsp;Zugang verweigert !&nbsp; + + +</span></b></p>
+		</div>
+HTML
 	}
 	
 return $w;

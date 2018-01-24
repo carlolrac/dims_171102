@@ -56,7 +56,7 @@ sub Zug12  {
 				#my $tmp3 = $tmp2;
 				#chomp($tmp3);
 				for ($i=1; $i<=$#daten; $i++)  {
-					$daten[$i] && $tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+					#$daten[$i] && $tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
 					$daten[$i] && $tmp2 =~ /$daten[$i]/ and $w="access";
 					}
 				}

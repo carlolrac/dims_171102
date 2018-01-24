@@ -1,5 +1,5 @@
 #!/usr/local/bin/perl -w
-package zugglp1;
+package zugglp1_11;
 use strict;
 use vars qw(@ISA @EXPORT $VERSION);
 use Exporter;

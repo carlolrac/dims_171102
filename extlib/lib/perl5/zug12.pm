@@ -57,13 +57,15 @@ sub Zug12  {
 			if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ )  {
 				$tmp2=$_;
 				$tmp2 =~ s/\s/\|/;
+				$tmp2 =~ s/\s+$//;
 				my $tmp3 = $tmp2;
-				chomp($tmp3);
+				#chomp($tmp3);
 				for ($i=1; $i<=$#daten; $i++)  {
-					#$daten[$i] && $tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+					
 					if ($daten[$i]) {
 						$daten[$i] =~ s/\s+$//;
-						print "<script>alert('$daten[$i]')</script>";
+						print "<script>alert('$daten[$i] - $tmp3')</script>";
+						$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
 						if ($daten[$i] && $tmp2 =~ /$daten[$i]/) {
 							$w="access";
 							}
@@ -92,7 +94,11 @@ sub Zug12  {
 		#print "<script>alert('$daten[1]');</script>";
 		print "<script>alert('check: $check');</script>";
 
-	$w="access";
+	if (not($w)) {
+		$w="access2";
+		}
+
+	print "<script>alert('$w');</script>";
 
 	if (not($w)) {
 		print <<HTML;

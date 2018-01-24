@@ -30,30 +30,42 @@ sub Zug11  {
 	$h ||="";
 	my (@daten,@log,$w,$check,$i,$tmp,$tmp2);
 	my ($ordner)="/mnt/daten/BCRS11";
+
+	$tmp=$ENV{REMOTE_ADDR};
+	$check=substr($tmp,0,7);
 	
 	chdir ($ordner);
 	open(ACC,"access11.txt");
 	@daten=<ACC>;
 	close ACC;
 
-	#chdir ($ordner);
 	open(LOG,"log.txt");
 	@log=<LOG>;
 	close LOG;
 
-	$tmp=$ENV{REMOTE_ADDR};
-	$check=substr($tmp,0,7);
-	if ($daten[0] =~ /$check/)  {
-		foreach (@log) {
 
+	if ($daten[0] =~ m/$check/)  {
+		foreach (@log) {
 			if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ )  {
+				$tmp2=$_;
+				$tmp2 =~ s/\s/\|/;
+				$tmp2 =~ s/\s+$//;
+				my $tmp3 = $tmp2;
+				#chomp($tmp3);
 				for ($i=1; $i<=$#daten; $i++)  {
-					chomp($daten[$i]);
-					$tmp2=$_;
-					$tmp2 =~ s/\s/\|/;
-					$daten[$i] && $tmp2 =~ /$daten[$i]/ and $w="access";
+					
+					if ($daten[$i]) {
+						$daten[$i] =~ s/\s+$//;
+						#print "<script>alert('$daten[$i] - $tmp3')</script>";
+						#$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+						if ($daten[$i] && $tmp2 =~ /$daten[$i]/) {
+							$w="access";
+							}
+						#$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+						}
 					}
 				}
+			#last if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ );
 			}
 		}
 
@@ -61,7 +73,7 @@ sub Zug11  {
 		print <<HTML
 		<div align="center">
 		<br><br><br><br><br>
-		<h3>Dieser Bereich steht nur den Mitarbeitern der Abteilung <span style=\"color:red\">TBRSE21</span> zur Verf&uuml;gung !</h3><br><br>
+		<h3>Dieser Bereich steht nur den Mitarbeitern der Abteilung <span style=\"color:red\">ECG4B</span> zur Verf&uuml;gung !</h3><br><br>
 		<!--p><b><br>Passwort nicht korrekt !</b><br><br//-->
 		<b><span style=\"color:red\">+ + + &nbsp;Zugang verweigert !&nbsp; + + +</span></b></p>
 		</div>

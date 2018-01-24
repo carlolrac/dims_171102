@@ -14,11 +14,11 @@ $VERSION = 1.00;
 #!<meta name="DC.Contributor" 	  content="Markus Fritz, Markus.Fritz@airbus.com">
 #!<meta name="DC.Date.Create" 	  content="2005-07-09T2:59+0:00">
 #!<meta name="DC.Language"    	  content="de">
-#!<meta name="DC.Rights"	  	content="Rights of ideas and sourcecode are owned by the author,2003-2008">
+#!<meta name="DC.Rights"	  	  content="Rights of ideas and sourcecode are owned by the author,2003-2008">
 #!<meta name="DC.Warranty"        content="keine Gewähr für Richtigkeit der Daten seitens des Autors; 
-#!				           Inhalte sind Eigentum der Abteilung TBRSE22, Airbus Hamburg  ">
+#!				           		Inhalte sind Eigentum der Abteilung TBRSE22, Airbus Hamburg  ">
 #!<meta name="DC.LastChange"  	  content="2008-04-07T12:52+0:00">
-#!<meta name="Version"   	  content="1">
+#!<meta name="Version"   	  	  content="1">
 
 sub Zug12  {
 
@@ -37,22 +37,13 @@ sub Zug12  {
 	@daten=<ACC>;
 	close ACC;
 
-	#foreach (@daten) { s/^\s+//; s/\s+$//; }
-
 	open(LOG,"log.txt");
 	@log=<LOG>;
 	close LOG;
 	@log=reverse(@log);
 
 
-	#$check = "172.17.";
-
 	if ($daten[0] =~ m/$check/)  {
-		print "<script>alert('hurra')</script>";
-		}
-
-
-	#if ($daten[0] =~ m/$check/)  {
 		foreach (@log) {
 			if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ )  {
 				$tmp2=$_;
@@ -64,41 +55,41 @@ sub Zug12  {
 					
 					if ($daten[$i]) {
 						$daten[$i] =~ s/\s+$//;
-						print "<script>alert('$daten[$i] - $tmp3')</script>";
-						$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+						#print "<script>alert('$daten[$i] - $tmp3')</script>";
+						#$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
 						if ($daten[$i] && $tmp2 =~ /$daten[$i]/) {
 							$w="access";
 							}
-						$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
+						#$tmp2 =~ /$daten[$i]/ and print "<script>alert('$tmp3')</script>";
 						}
 					}
 				}
 			#last if ($g && $h && $_ =~ /$g/ && $_ =~ /$h/ );
 			}
-	#	}
+		}
 	
 
 
-		print "<script>alert('check: $check');</script>";
-		my $tmp77 = $daten[0];
-		$tmp77 =~ s/\s+$//;
-		print "<script>alert('daten0: $tmp77');</script>";
-		#print "<script>alert('daten1: $daten[1]');</script>";
-		#print "<br>";
-		#print "<script>alert('datenall: $#daten');</script>";
-		#print "<br>";
-		print "<script>alert('g: $g');</script>";
-		print "<script>alert('h: $h');</script>";
-		$tmp2 and print "<script>alert('tmp2: $tmp2');</script>";
-		$tmp and print "<script>alert('tmp: $tmp');</script>";
-		#print "<script>alert('$daten[1]');</script>";
-		print "<script>alert('check: $check');</script>";
+		#print "<script>alert('check: $check');</script>";
+		#my $tmp77 = $daten[0];
+		#$tmp77 =~ s/\s+$//;
+		#print "<script>alert('daten0: $tmp77');</script>";
+		##print "<script>alert('daten1: $daten[1]');</script>";
+		##print "<br>";
+		##print "<script>alert('datenall: $#daten');</script>";
+		##print "<br>";
+		#print "<script>alert('g: $g');</script>";
+		#print "<script>alert('h: $h');</script>";
+		#$tmp2 and print "<script>alert('tmp2: $tmp2');</script>";
+		#$tmp and print "<script>alert('tmp: $tmp');</script>";
+		##print "<script>alert('$daten[1]');</script>";
+		#print "<script>alert('check: $check');</script>";
 
-	if (not($w)) {
-		$w="access2";
-		}
+	#if (not($w)) {
+	#	$w="access2";
+	#	}
 
-	print "<script>alert('$w');</script>";
+	#print "<script>alert('$w');</script>";
 
 	if (not($w)) {
 		print <<HTML;
